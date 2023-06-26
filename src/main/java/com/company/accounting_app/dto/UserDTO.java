@@ -11,11 +11,11 @@ public class UserDTO {
 
     private Long id;
 
-    private String userName, password, confirmPassword, firstName, lastName, phone;
+    private String username, password, confirmPassword, firstName, lastName, phone;
 
     private RoleDTO role;
 
-//    private CompanyDTO company;
+    private CompanyDTO company;
 
     private boolean isOnlyAdmin;
 
