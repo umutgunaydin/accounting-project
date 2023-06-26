@@ -1,6 +1,6 @@
 package com.company.accounting_app.entity;
 
-import com.company.accounting_app.enums.CompanyStatus;
+import com.company.accounting_app.enums.ClientVendorType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,17 +14,19 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "companies")
+@Table(name = "clients_vendors")
 @Where(clause = "is_deleted=false")
-public class Company extends BaseEntity{
-    @Column(unique = true)
-    private String title;
+public class ClientVendor extends BaseEntity{
+
+    private String clientVendorName;
     private String phone;
     private String website;
     @Enumerated(EnumType.STRING)
-    private CompanyStatus companyStatus;
+    private ClientVendorType clientVendorType;
     @OneToOne
-    @JoinColumn(name = "address_id")
     private Address address;
+    @ManyToOne
+    private Company company;
+
 
 }

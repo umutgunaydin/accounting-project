@@ -1,12 +1,12 @@
 package com.company.accounting_app.enums;
 
-public enum CompanyStatus {
+public enum InvoiceType {
 
-    ACTIVE("Active"), PASSIVE("Passive");
+    PURCHASE("Purchase"),SALES("Sales");
 
     private final String value;
 
-    CompanyStatus(String value) {
+    InvoiceType(String value) {
         this.value = value;
     }
 }
